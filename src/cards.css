@@ -4,12 +4,17 @@ html {
     color: #2F3442;
     height: 100%;
     background-color: #FFFFFF;
+    position: absolute;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
-.icon {color: #BCD2DA;}
+.icon {color: #2d84a3;}
 
 .card {
     /* display, flex-direction */
+    display: flex;
+    flex-direction: column;
     border: 1px solid #CAD0D2;
     border-radius: 4px;
     overflow: hidden;
@@ -17,6 +22,10 @@ html {
 
 .card__description {
     /* display, flex-direction, justify-content, align-items */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 15px 0;
 }
 
@@ -31,25 +40,29 @@ html {
 
 .card__price {
     text-align: center;
-    color: #57727C;
+    color: #2d84a3;
     font-size: 12px;
     font-weight: 700;
     padding: 5px 15px;
-    border-top: 1px solid #D7DBDD;
-    background-color: #EEF3F5;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    background-color: #d9e1e4;
 }
 
 .cardGroup {
     /* display */
-  
-    border: 1px solid #CAD0D2;
-    border-radius: 4px;
+    display: flex;
+    border: 5px solid #2d84a3;
+    border-radius: 20px;
     overflow: hidden;
+    flex-direction: column;
+    max-width: 320px;
   }
   
     .cardGroup__card {
       /* flex-grow, flex-shrink, flex-basis */
-  
+      flex-grow: 1.5;
+      flex-shrink: 1.5;
+      flex-basis: 1;
       border: none;
       border-radius: 0;
     }
@@ -60,4 +73,46 @@ html {
   
     .cardGroup__cardDescription {
       /* flex-grow, flex-shrink, flex-basis */
+      flex-grow: 1;
     }
+
+
+@media screen and (min-width: 320px) {
+
+html {
+  width: 100%;
+}
+
+.icon {color: #BCD2DA;}
+
+.card {
+  width: 100%;
+  flex-direction: column;
+}
+
+.card__description {
+  width: 100%;
+  flex-direction: column;
+}
+
+.card__descriptionText {
+  width: 100%;
+  color: #57727C;
+}      
+    
+.card__price {
+  color: #57727C;
+  border-top: 1px solid #D7DBDD;
+  background-color: #EEF3F5;
+}
+
+.cardGroup {
+  border: 1px solid #CAD0D2;
+  border-radius: 4px;
+  flex-direction: row;
+  max-width: 710px;
+  margin: auto;
+}
+
+
+}
